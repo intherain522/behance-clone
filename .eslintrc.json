@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "plugins": ["@typescript-eslint", "react-hooks", "simple-import-sort", "unused-imports"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    //"airbnb",
+    //"airbnb-typescript",
+    //"airbnb/hooks",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended", // 해당 플러그인의 권장 규칙을 사용합니다.
+    "plugin:prettier/recommended" // plugin과 eslint-config-prettier 설정을 한번에 합니다.
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+    "camelcase": [2, { "properties": "always" }], // 카멜케이스 적용
+    "react/jsx-props-no-spreading": 0, // 스프레드 문법 사용제한 (사용x)
+    "react/react-in-jsx-scope": 0, // 리액트 파일내의 선언하기 react17이상부터는 꺼두어도 된다.
+    "react/prefer-stateless-function": 1, // 컴포넌트가 순수 함수로만 작성되도록 강제실행 (사용o)
+    "react/jsx-curly-newline": 0, // jsx 개행요구 삭제
+    "react/jsx-wrap-multilines": 0, // jsx 개행요구 삭제
+    "react/jsx-filename-extension": 0, // jsx를 포함할 수 있는 파일 확장자 제한(모두 가능하도록 허용)
+    "react/jsx-one-expression-per-line": 0, // 코드 표현식 나열옵션(자유롭게)
+    "no-nested-ternary": 1, // 중첨삼항식 허용 여부(허용 안함, 경고만 처리)
+    "no-console": 0, // console 사용가능 유무(사용x)
+    "no-plusplus": 0, // ++, -- 문법 사용금지
+    "react/prop-types": 0, // prop-type 사용 유무(사용가능)
+    "react/no-unescaped-entities": 1, // 잘못된 entities를 바로 잡습니다.(문법 중 ">"같은 부분)
+    "import/no-cycle": 0,
+    "no-param-reassign": [2, { "props": true }], //매개변수의 수정 또는 재할당으로 인한 의도적이지 않은 동작을 방지합니다.
+    "no-unused-vars": 2, // 사용하지 않는 코드는 에러로 간주합니다.
+    "no-use-before-define": ["off", { "functions": true, "classes": true, "variables": true }], // 먼저 선언 필수(호이스팅)
+    "consistent-return": 0, // 함수에서 "return"을 절대값을 항상 지정하거나 지정하지 않습니다.(풀어두는 편이 더 나음)
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ], // 앵커 옵션, next 사용 시 설정 필요
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "parser": "@typescript-eslint/parser"
+}
