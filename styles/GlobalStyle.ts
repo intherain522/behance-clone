@@ -128,12 +128,15 @@ table {
 a{
   text-decoration:none;
 }
+input:focus{
+  outline: none;
+}
 /*commonStyle*/
 html{
   color:#222222;
 }
-input:focus{
-  border:0;
+a{
+  color:#222222;
 }
 .inner{
   width:97.5%;
