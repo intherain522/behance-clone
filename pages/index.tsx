@@ -1,3 +1,4 @@
+import Footer from "@components/common/Footer";
 import Header from "@components/common/Header";
 import MainLogo from "@components/layout/main/MainLogo";
 import MainSearch from "@components/layout/main/MainSearch";
@@ -16,6 +17,7 @@ const Index: NextPage = () => {
     <MainHeader>
       <Header />
       <MainSearch />
+      <Footer />
     </MainHeader>
   );
 };
