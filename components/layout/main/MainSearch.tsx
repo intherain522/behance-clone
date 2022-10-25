@@ -28,6 +28,7 @@ const SearchNav = styled.div`
   width: 750px;
   background-color: #fff;
   border-left: 1px solid #cccccc;
+  border-radius: 0 100px 100px 0;
   box-sizing: border-box;
   padding: 8px 15px;
   & ul {
