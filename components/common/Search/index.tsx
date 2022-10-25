@@ -26,6 +26,8 @@ const InputStyle = styled.div`
     background: none;
     box-sizing: border-box;
     line-height: 50px;
+    font-size: 23px;
+    font-weight: 600;
     &::placeholder {
       color: #727272;
       font-size: 23px;
@@ -46,11 +48,11 @@ const SearchSuggestion = styled.div`
   padding: 65px 50px 20px 50px;
   & ul li {
     font-size: 22px;
-    font-weight: 600;
-    padding: 5px 0;
+    font-weight: 500;
+    padding: 8px 0;
     & p {
-      font-size: 12px;
-      margin-bottom: 8px;
+      font-size: 14px;
+      margin-bottom: 5px;
       font-weight: 400;
       color: #696969;
     }
