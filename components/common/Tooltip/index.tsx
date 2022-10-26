@@ -2,14 +2,15 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const TooltipBox = styled.div<{ align: string }>`
+  display: none;
+  width: max-content;
   position: absolute;
   background: #fff;
   bottom: 200%;
   border-radius: 6px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-
   ${({ align }) => (align === "left" ? "left: 20px;" : null)}
-  ${({ align }) => (align === "right" ? "right: 20px;" : null)}
+  ${({ align }) => (align === "center" ? "left:50%;transform: translateX(-50%);" : null)}
   padding: 13px 0px;
   & span {
     display: block;
@@ -18,9 +19,10 @@ const TooltipBox = styled.div<{ align: string }>`
     position: absolute;
     border-top-color: #fff;
     bottom: -6px;
-    left: 15px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
     transform: rotate(45deg);
+    ${({ align }) => (align === "left" ? "left: 15px;" : null)}
+    ${({ align }) => (align === "center" ? "left:50%;transform:translate(-50%, 0) rotate(45deg);" : null)}
   }
   & span::before {
     content: "";
