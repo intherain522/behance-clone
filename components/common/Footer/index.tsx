@@ -14,6 +14,7 @@ const FooterContainer = styled.div`
   font-size: 11px;
   color: dimgray;
   font-weight: bold;
+  z-index: 600;
 `;
 const TooltipWrapper = styled.div`
   position: relative;
@@ -22,7 +23,7 @@ const TolltipSelecter = styled.div`
   cursor: pointer;
   position: relative;
   text-align: center;
-  padding: 7.5px 25px;
+  padding: 10px 25px;
   &::after {
     content: "";
     position: relative;
@@ -44,6 +45,18 @@ const TolltipSelecter = styled.div`
     height: 15px;
     width: 1px;
     background: #afafaf;
+  }
+`;
+const FooterNav = styled.div`
+  & ul {
+    padding: 0 25px;
+  }
+  & li {
+    float: left;
+    padding-right: 10px;
+  }
+  & li a {
+    color: dimgray;
   }
 `;
 
@@ -79,33 +92,118 @@ const Footer = () => {
         />
       </TooltipWrapper>
       <TooltipWrapper>
-        <TolltipSelecter>Behance 추가 정보</TolltipSelecter>
+        <TolltipSelecter>언어</TolltipSelecter>
         <Tooltip
           data={[
             {
-              title: "Behance에서의 채용 정보",
+              title: "English",
               link: "#",
             },
             {
-              title: "Adobe Portfolio",
+              title: "Čeština",
               link: "#",
             },
             {
-              title: "블로그",
+              title: "Dansk",
               link: "#",
             },
             {
-              title: "크리에이티브 채용 팁",
+              title: "Deutsch",
               link: "#",
             },
             {
-              title: "앱 다운로드",
+              title: "Español",
+              link: "#",
+            },
+            {
+              title: "Français",
+              link: "#",
+            },
+            {
+              title: "Italiano",
+              link: "#",
+            },
+            {
+              title: "Nederlands",
+              link: "#",
+            },
+            {
+              title: "Norsk",
+              link: "#",
+            },
+            {
+              title: "Polski",
+              link: "#",
+            },
+            {
+              title: "Português",
+              link: "#",
+            },
+            {
+              title: "Pyccкий",
+              link: "#",
+            },
+            {
+              title: "Suomi",
+              link: "#",
+            },
+            {
+              title: "Svenska",
+              link: "#",
+            },
+            {
+              title: "Türkçe",
+              link: "#",
+            },
+            {
+              title: "日本語",
+              link: "#",
+            },
+            {
+              title: "한국어",
+              link: "#",
+            },
+            {
+              title: "中文(简体)",
+              link: "#",
+            },
+            {
+              title: "中文(繁體)",
               link: "#",
             },
           ]}
-          align="right"
+          align="center"
         />
       </TooltipWrapper>
+      <FooterNav>
+        <ul>
+          <li>
+            <Link href="#">
+              <a>사용약관</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a>개인정보</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a>커뮤니티</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a>도움말</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a>Cookie 환경 설정</a>
+            </Link>
+          </li>
+        </ul>
+      </FooterNav>
     </FooterContainer>
   );
 };
