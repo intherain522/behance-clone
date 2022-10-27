@@ -58,6 +58,9 @@ const FooterNav = styled.div`
   & li a {
     color: dimgray;
   }
+  & li:hover a {
+    color: #0057ff;
+  }
 `;
 
 const Footer = () => {
