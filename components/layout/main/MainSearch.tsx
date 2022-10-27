@@ -6,7 +6,6 @@ interface Props {
 
 const MainSerch = styled.div`
   padding: 24px 0;
-  border-bottom: 1px solid #ececec;
   box-sizing: border-box;
 `;
 
