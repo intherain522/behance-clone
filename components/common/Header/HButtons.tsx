@@ -26,8 +26,12 @@ const HButtons = styled(({ className }: Props) => {
     font-size: 15px;
     font-weight: 600;
     margin-left: 10px;
+    cursor: pointer;
+
     &:first-child {
-      border: 1px solid #ececec;
+      border: 1px solid #dee8ff;
+      background: #f5f8ff;
+      color: #0057ff;
     }
     &:nth-child(2) {
       background: #0057ff;

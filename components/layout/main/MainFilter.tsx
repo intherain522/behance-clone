@@ -1,4 +1,5 @@
 import Filter from "@components/common/Filter";
+import AlignFilter from "@components/common/Filter/AlignFilter";
 import styled from "styled-components";
 
 const MainFilter = () => {
@@ -63,13 +64,18 @@ const MainFilter = () => {
             ]}
           />
         </FilterBox>
-        <SortMenu></SortMenu>
+        <SortMenu>
+          <AlignFilter />
+        </SortMenu>
       </FilterContainer>
     </div>
   );
 };
 const FilterContainer = styled.div`
   padding-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 const FilterBox = styled.div`
   display: flex;

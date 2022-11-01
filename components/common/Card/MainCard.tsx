@@ -8,7 +8,7 @@ const MainCard = () => {
       </ImgBox>
       <CardInfo>
         <InfoText>
-          <h1>Tile</h1>
+          <h1>Title</h1>
           <h2>name</h2>
         </InfoText>
         <InfoState>
@@ -61,10 +61,17 @@ const CardInfo = styled.div`
   padding-top: 8px;
 `;
 const InfoText = styled.div`
+  max-width: 55%;
   & h1 {
     font-size: 15px;
     font-weight: 600;
+    overflow: hidden;
     text-overflow: ellipsis;
+    word-break: normal;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     line-height: 20px;
     cursor: pointer;
   }
@@ -79,6 +86,7 @@ const InfoText = styled.div`
   }
 `;
 const InfoState = styled.div`
+  max-width: 45%;
   & ul {
     display: flex;
     align-items: center;
@@ -89,6 +97,9 @@ const InfoState = styled.div`
     font-size: 13px;
     font-weight: 600;
     margin-left: 12px;
+  }
+  & li:first-child {
+    margin-left: 0;
   }
   & li img {
     width: 15px;
