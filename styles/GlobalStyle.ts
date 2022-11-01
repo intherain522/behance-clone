@@ -104,7 +104,6 @@ section {
 }
 body {
   line-height: 1;
-  font-family:Noto Sans, Noto Sans KR;
 }
 ol,
 ul {
@@ -131,18 +130,7 @@ a{
 input:focus{
   outline: none;
 }
-/*commonStyle*/
-html{
-  color:#222222;
-}
-a{
-  color:#222222;
-}
-.inner{
-  width:97.5%;
-  margin:0 auto;
-  box-sizing: border-box;
-}
+
 `;
 
 export default GlobalStyle;
