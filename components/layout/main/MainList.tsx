@@ -1,11 +1,19 @@
 import MainCard from "@components/common/Card/MainCard";
+import useStoreList from "@store/list";
 import styled from "styled-components";
 
 const MainList = (props: any) => {
+  const { list } = useStoreList();
+
   return (
     <ListContainer>
       <div className="inner">
         <CardContainer>
+          <MainCard />
+          <MainCard />
+          <MainCard />
+          <MainCard />
+          <MainCard />
           <MainCard />
           <MainCard />
           <MainCard />
