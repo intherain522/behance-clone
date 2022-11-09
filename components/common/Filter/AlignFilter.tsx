@@ -10,6 +10,7 @@ const AlignFilter = () => {
 
 const Container = styled.div`
   position: relative;
+  cursor: pointer;
   &::before {
     content: "정렬";
     position: absolute;
