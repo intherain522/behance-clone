@@ -1,7 +1,8 @@
+import { CardData } from "@models/api/card";
 import create from "zustand";
 
 type ListStoreState = {
-  list: any[];
+  list: CardData[];
   getList: () => void;
 };
 
@@ -14,7 +15,7 @@ const useStoreList = create<ListStoreState>((set, get) => ({
       const responseJson = await response.json();
       console.log("responseJson", responseJson);
       set(() => ({
-        list: responseJson.result,
+        list: responseJson.result.list,
       }));
     } catch (error) {
       console.log("error", error);

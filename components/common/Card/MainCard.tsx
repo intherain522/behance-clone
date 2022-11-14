@@ -1,25 +1,37 @@
+import { CardData } from "@models/api/card";
+import useStoreList from "@store/list";
+import { type } from "os";
+import { useCallback, useEffect } from "react";
 import styled from "styled-components";
 
-const MainCard = () => {
+//type Props = {
+//  props: CardData;
+//};
+
+interface Props extends CardData {
+  onClick?: () => void;
+}
+
+const MainCard = ({ img = "", title = "", name = "", like = "0", view = "0", onClick }: Props) => {
   return (
-    <CardContainer>
+    <CardContainer onClick={onClick}>
       <ImgBox>
-        <img src="/images/common/test.jpg" />
+        <img src={`${img}`} />
       </ImgBox>
       <CardInfo>
         <InfoText>
-          <h1>Title</h1>
-          <h2>name</h2>
+          <h1>{`${title}`}</h1>
+          <h2>{`${name}`}</h2>
         </InfoText>
         <InfoState>
           <ul>
             <li>
               <img src="/images/common/cardlike_icon.svg" alt="좋아요" />
-              <span>000</span>
+              <span>{`${like}`}</span>
             </li>
             <li>
               <img src="/images/common/cardeye_icon.svg" alt="조회수" />
-              <span>000k</span>
+              <span>{`${view}`}</span>
             </li>
           </ul>
         </InfoState>

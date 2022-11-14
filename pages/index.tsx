@@ -1,13 +1,9 @@
-import MainCard from "@components/common/Card/MainCard";
 import Footer from "@components/common/Footer";
 import Header from "@components/common/Header";
 import MainFilter from "@components/layout/main/MainFilter";
 import MainList from "@components/layout/main/MainList";
-import MainLogo from "@components/layout/main/MainLogo";
 import MainSearch from "@components/layout/main/MainSearch";
-import useStoreList from "@store/list";
 import type { NextPage } from "next";
-import { useCallback, useEffect } from "react";
 import styled from "styled-components";
 const Wrap = styled.div``;
 const MainHeader = styled.div`
@@ -21,16 +17,6 @@ const MainHeader = styled.div`
 `;
 
 const Index: NextPage = () => {
-  const { getList } = useStoreList();
-
-  const asyncUseEffect = useCallback(async () => {
-    getList();
-  }, [getList]);
-
-  useEffect(() => {
-    asyncUseEffect();
-  }, []);
-
   return (
     <Wrap>
       <MainHeader>

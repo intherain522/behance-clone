@@ -12,7 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       result.push({
         title: faker.lorem.words(),
         name: faker.name.fullName(),
-        img: faker.image.abstract(),
+        img: faker.image.nature(640, 480, true),
         like: faker.datatype.number(500),
         view: faker.datatype.number(1000),
       });
@@ -30,17 +30,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     });
   }
 
-  res
-    .status(200)
-    .json({
-      response: [
-        {
-          title: faker.lorem.words(),
-          name: faker.name.fullName(),
-          img: faker.image.abstract(),
-          like: faker.datatype.number(500),
-          view: faker.datatype.number(1000),
-        },
-      ],
-    });
+  res.status(200).json({
+    response: [
+      {
+        title: faker.lorem.words(),
+        name: faker.name.fullName(),
+        img: faker.image.abstract(),
+        like: faker.datatype.number(500),
+        view: faker.datatype.number(1000),
+      },
+    ],
+  });
 }
