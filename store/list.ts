@@ -1,24 +1,43 @@
-import { CardData } from "@models/api/card";
+import { CardData, CardRequest, CardResponse } from "@models/api/card";
+import { Request, Response } from "@models/network";
 import create from "zustand";
 
 type ListStoreState = {
+  isLoading: boolean;
   list: CardData[];
-  getList: () => void;
+  curPage: number;
+  totalCnt: number;
+  getList: ({ data }: Request<CardRequest>) => void;
 };
 
 const useStoreList = create<ListStoreState>((set, get) => ({
+  isLoading: false,
+  curPage: 0,
+  totalCnt: 0,
   list: [],
-  getList: async () => {
+  getList: async ({ data }) => {
     try {
-      const response = await fetch("/api/data");
-      console.log("response", response);
-      const responseJson = await response.json();
-      console.log("responseJson", responseJson);
       set(() => ({
-        list: responseJson.result.list,
+        isLoading: true,
+      }));
+
+      const response = await fetch(`/api/data?curPage=${data?.curPage}&size=${data?.size}`);
+      console.log("response", response);
+      const responseJson: Response<CardResponse> = await response.json();
+      console.log("responseJson", responseJson);
+      set((state) => ({
+        ...state,
+        isLoading: false,
+        list: [...state.list, ...(responseJson.result?.list ?? [])],
+        totalCnt: responseJson.result?.pagination.totalCnt,
+        curPage: responseJson.result?.pagination.curPage,
       }));
     } catch (error) {
       console.log("error", error);
+      set((state) => ({
+        ...state,
+        isLoading: false,
+      }));
     }
   },
 }));
