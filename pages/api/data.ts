@@ -5,14 +5,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "GET") {
     console.log("req query", req.query);
     const { size = 10, curPage = 0 } = req.query;
-    const total = 1000;
+    const total = 80;
 
     const result = [];
     for (let index = 0; index < size; index++) {
       result.push({
         title: faker.lorem.words(),
         name: faker.name.fullName(),
-        img: faker.image.nature(640, 480, true),
+        img: faker.image.city(640, 480, true),
         like: faker.datatype.number(500),
         view: faker.datatype.number(1000),
       });
